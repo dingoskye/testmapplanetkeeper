@@ -1,6 +1,7 @@
 import '../css/style.css'
 import { Actor, Engine, Vector, DisplayMode } from "excalibur"
 import { Resources, ResourceLoader } from './resources.js'
+import { UI } from './ui.js'
 
 export class Game extends Engine {
 
@@ -22,6 +23,9 @@ export class Game extends Engine {
         fish.vel = new Vector(-10,0)
         fish.events.on("exitviewport", (e) => this.fishLeft(e))
         this.add(fish)
+
+        this.ui = new UI();
+        this.add(this.ui);
     }
 
     fishLeft(e) {
