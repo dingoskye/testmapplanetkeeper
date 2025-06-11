@@ -24,7 +24,8 @@ export class Game extends Engine {
         fish.events.on("exitviewport", (e) => this.fishLeft(e))
         this.add(fish)
 
-        this.ui = new UI();
+        this.player = { score: 0, resources: 0 }; // of een Actor/subclass als je dat gebruikt
+        this.ui = new UI(this.player);
         this.add(this.ui);
     }
 
